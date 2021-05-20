@@ -20,5 +20,4 @@ def predict(img):
     x = torch.tensor(x).unsqueeze(0)
     net.eval()
     y = F.softmax(net(x), 1)[0]
-    _, index = torch.max(y, 0)
-    return y[index].item()
+    return y[0].item()
